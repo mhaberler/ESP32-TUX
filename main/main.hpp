@@ -88,7 +88,7 @@ using namespace std ;
 /* SD Card support */
 #if defined(SD_SUPPORTED)
         // Shared SPI Bus with Display
-    #if defined(WT32_SC01) //|| defined(MAKERFAB_ESP32S3_SPI)
+    #if defined(WT32_SC01) || defined(ARDUINO_M5STACK_CORES3) //|| defined(MAKERFAB_ESP32S3_SPI)
         #include "helper_storage_shared.hpp"
     #else
         // Display and SD card is not on same SPI bus

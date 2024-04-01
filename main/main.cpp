@@ -216,7 +216,7 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
 
 extern "C" void app_main(void)
 {
-    esp_log_level_set(TAG, ESP_LOG_DEBUG);      // enable DEBUG logs for this App
+    esp_log_level_set(TAG, ESP_LOG_VERBOSE);      // enable DEBUG logs for this App
     //esp_log_level_set("SettingsConfig", ESP_LOG_DEBUG);    
     esp_log_level_set("wifi", ESP_LOG_WARN);    // enable WARN logs from WiFi stack
 
@@ -267,6 +267,8 @@ extern "C" void app_main(void)
 //********************** CONFIG HELPER TESTING ENDS
 
     lcd.init();         // Initialize LovyanGFX
+
+
     lcd.initDMA();      // Init DMA
     lv_init();          // Initialize lvgl
 
@@ -274,7 +276,7 @@ extern "C" void app_main(void)
     {
         ESP_LOGE(TAG, "LVGL setup failed!!!");
     }
-
+   
     // /* Initialize the event loop */
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
